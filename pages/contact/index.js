@@ -89,7 +89,7 @@ export default function Galerie({ categories }) {
 
             } else {
                 apiSuccess.innerHTML=""
-                apiError.innerHTML="Une erreur est survenue lors de l'envoi du message !"
+                apiError.innerHTML="Une erreur est survenue lors de l envoi du message !"
             };
             })
         }
@@ -160,4 +160,4 @@ export const getStaticProps = async () => {
         categories,
       },
   }
-}
+}git 
