@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@1&family=Open+Sans+Condensed:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0
+}
+
 html,
 body {
   padding: 0;
-  margin: 0;
+  margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #2A4050;
+  color: #90B4C5;
+  max-width :  960px;
 }
 
 a {
@@ -11,6 +22,333 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+header {
+  margin-bottom: 30px;
 }
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* picture accueil with centered text*/
+#accueil {
+  min-height: 500px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-image:url("../public/couple2.jpg"); 
+ 
+}
+
+h1, h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size:3rem;
+    font-weight: 1000;
+    letter-spacing:6px; 
+    color : #aaa;
+    text-align: center;
+}
+
+h2 {
+    font-size:2rem;
+    font-weight: 400;
+    letter-spacing:4px;
+}
+
+#accueil h1 {
+  background: #2a4050be;
+  padding: 25px;
+  border-radius: 5px;;
+}
+
+nav{ 
+  width: 100%;
+  height: 50px;
+  font-family: 'Fondamento', cursive;
+  font-style: italic;
+  font-weight: 400;
+  font-size:1.5em;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+#menu  {
+  flex: 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-item {
+  border-bottom: 2px solid ;
+}
+
+.nav-item .active {
+  color: #90b4c577; 
+}
+
+.nav-item:hover {
+  border-top: 2px solid ;
+}
+
+#btn-toogle-menu{
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 3px 5px;
+  background: #000;
+  height : 42px;
+  cursor: pointer;
+
+}
+
+.dropdown-menu {
+  display: none;
+  width : 100px;
+  position: absolute;
+  padding: 15px 10px 5px 5px;
+  background: #2a4050c9;
+  z-index: 1000;
+}
+
+.dropdown-toggle:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  font-size:0.6em;
+  width :100%;
+ 
+}
+
+.dropdown-item:hover {
+  font-size:0.8em;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+
+
+footer {
+  margin-bottom: 40px;
+  text-align: center;
+
+}
+
+.copyright{
+  font-family: "Helvetica Neue";
+  font-weight : 400;
+}
+
+.social-icons {
+  width : 40%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  margin: 30px auto;
+}
+
+.logo-social {
+  border-radius: 30%;
+}
+
+.logo-social:hover{
+  background: #c2c2c28c ;
+}
+
+/* page galleries */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color:#26262680 ;
+    padding: 25px;
+    margin: 30px 25px;
+}
+
+.image-container {
+    margin: 15px;
+    min-width: 250px;
+}
+
+/* page prices & prestations*/
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    margin: 30px 25px;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    width: 227px;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid #aaa;
+    margin: 20px 10px;
+    background-color:#26262680 ;
+}
+
+.card-title {
+    margin: 5px 0 12px 0;
+    height: 80px; 
+}
+
+.card-content {
+    min-height: 180px;
+    margin: 18px 10px;
+    text-align: justify;
+    color: #bbb;
+} 
+
+
+.card-price {
+    background: #bbb;
+    color: #242530;
+    padding: 6px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+/* page contact et formulaire */
+
+form {
+    position: relative;
+    margin: 30px auto;
+    max-width:450px;
+    text-align: left;
+}
+
+form div {
+    margin: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 16px;
+    line-height : 22px;
+    letter-spacing: 1.5px;
+    color: #bbb;
+    background-color:#26262685 ;
+    border-radius: 8px 0 8px 0;
+}
+
+
+.btn-contact { 
+    padding: 6px 10px; 
+    margin: 12px 0 8px 70%;
+    border-radius: 8px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    background-color: #bbb;
+}
+
+.btn-contact:hover {
+    font-weight: 700;
+    border : 2px solid #262626 ;
+}
+
+.msg {
+    margin: auto;
+    
+    margin-top: 5px;
+    max-width:450px;
+    height: 40px;
+
+}
+
+.msgSuccess {
+    text-align: center;
+    font-size: 18px;
+}
+
+.msgError {
+    color : rgba(255, 0, 0, 0.616);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing:1px;
+}
+
+
+
+/*  for mobile */
+@media screen and (max-width: 768px) {
+
+  #accueil h1 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size:2rem;
+    letter-spacing:4px;
+    padding: 15px;
+  }
+
+  #btn-toogle-menu{
+    display :block;
+  }
+
+  #menu  {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    background: #2A4050;
+  }
+
+  .nav-item {
+    width : 100%;
+    height: 50px;
+    border-bottom: 2px solid ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item:nth-child(1) {
+    border-top: 3px solid ;
+  }
+
+  .nav-item:hover {
+    font-size:1.2em;
+  }
+  
+  .dropdown-menu{
+    position: absolute;
+    top :50px;
+    right : 0px;
+    background-color: #2A4050;
+  }
+
+
+  .gallery {
+    display: flex;
+    padding: 5px;
+    margin: 10px 5px;
+}
+
+
+    .card-container {
+      
+        margin: 0px 0px;
+}
+
+    .card {
+      
+        width: 90%;
+    
+    }
+}
+
+
