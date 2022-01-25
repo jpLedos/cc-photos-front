@@ -104,7 +104,7 @@ return (
         <Header categories ={ categories.data } />
         <main>
             <h1>Contact</h1>
-            <h2>M'envoyer un message</h2>
+            <h2>Envoyer un message</h2>
             <div className="msg">
                 <p className="msgSuccess" id="apiSuccess"></p>
                 <p className="msgError" id="apiError"></p>
