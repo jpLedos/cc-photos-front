@@ -5,6 +5,8 @@ import Head from '../components/head'
 
 export default function Home( { categories } ) {
 
+console.log(process.env.STRAPI_API_URL);
+
   return (
     <>
         <Head />
@@ -21,7 +23,8 @@ export default function Home( { categories } ) {
 }
 
 export const getStaticProps = async () => {
-  const url =`${process.env.STRAPI_API_URL}categories`;
+  const url =`${process.env.STRAPI_API_URL}/api/categories`;
+  //console.log(url);
   const response = await fetch(url);
   const categories = await response.json();  
 

@@ -7,7 +7,7 @@ import Footer from '../../components/footer'
 export default function Galerie({ categories, galleries }) {
 
   const myLoader = ({ src, width, quality }) => {
-    return `http://localhost:1337${src}?w=${width}&q=${quality || 75}`
+    return `${process.env.STRAPI_API_URL}${src}?w=${width}&q=${quality || 75}`
   }
 
   const { query } = useRouter();
@@ -16,8 +16,6 @@ export default function Galerie({ categories, galleries }) {
       filteredCategories = galleries.data.filter(c => c.attributes.category.data.attributes.title === query.category)
     }
 
-    
-  
 
 return (
 
@@ -55,10 +53,10 @@ return (
 
 
 export const getStaticProps = async () => {
-  const url = `${process.env.STRAPI_API_URL}categories`;
+  const url = `${process.env.STRAPI_API_URL}/api/categories`;
   const response = await fetch(url);
   const categories = await response.json();  
-  const url2 = `${process.env.STRAPI_API_URL}galleries?populate=*`;
+  const url2 = `${process.env.STRAPI_API_URL}/api/galleries?populate=*`;
 
   const response2 = await fetch(url2);
   const galleries = await response2.json();  

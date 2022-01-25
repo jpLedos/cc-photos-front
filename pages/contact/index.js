@@ -2,10 +2,7 @@ import Header from '../../components/header'
 import Footer from '../../components/footer'
 import Head from '../../components/head'
 
-export default function Galerie({ categories, prices }) {
-
-  
-
+export default function Galerie({ categories }) {
 
     const validateForm = () =>                                 
     { 
@@ -52,8 +49,6 @@ export default function Galerie({ categories, prices }) {
     }
 
 
-
-
     const handleSubmit =(e) => {
         e.preventDefault();
         if(validateForm()) {
@@ -65,7 +60,7 @@ export default function Galerie({ categories, prices }) {
             .options[document.getElementById('choice-category').selectedIndex].value
             const message = document.getElementById("message").value;
 
-            const msgSuccess = document.getElementById("msgSuccess")
+            const apiSuccess = document.getElementById("apiSuccess")
             const apiError = document.getElementById("apiError")
 
             const payload = {
@@ -76,14 +71,17 @@ export default function Galerie({ categories, prices }) {
                 message,
             }
             //console.log({data : payload});
-        
-            fetch("http://localhost:1337/api/emails",{
+         
+            const url =`${process.env.STRAPI_API_URL}/api/emails`;
+            //console.log("post : " + url);
+            fetch("url",{
                 method : "POST" ,
                 headers : {
                     "content-type" : "application/json",
                 },
                 body : JSON.stringify({data : payload}),
             }).then(response => {
+                console.log(response);
             if(response.statusText === 'OK'){
                     document.forms['contact'].reset();
                     apiSuccess.innerHTML="Merci pour votre message qui a bien été envoyé !"
@@ -153,18 +151,13 @@ return (
 
 
 export const getStaticProps = async () => {
-  const url =  `${process.env.STRAPI_API_URL}categories`;
+  const url =  `${process.env.STRAPI_API_URL}/api/categories`;
   const response = await fetch(url);
   const categories = await response.json();  
-
-  const url2 =`${process.env.STRAPI_API_URL}prices?populate=*`;
-  const response2 = await fetch(url2);
-  const prices = await response2.json();  
 
   return {
       props : {
         categories,
-        prices,
       },
   }
 }
