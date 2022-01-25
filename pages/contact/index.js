@@ -160,4 +160,4 @@ export const getStaticProps = async () => {
         categories,
       },
   }
-}git 
+}
