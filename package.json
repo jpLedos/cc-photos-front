@@ -1,5 +1,6 @@
 {
-  "name": "cq-photo-fe",
+  "cacheDirectories": [".next/cache"],
+  "name": "cq-photo-front",
   "private": true,
   "scripts": {
     "dev": "next dev",
