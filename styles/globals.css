@@ -14,7 +14,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: #2A4050;
   color: #90B4C5;
-  max-width :  960px;
+  max-width :  980px;
 }
 
 a {
@@ -37,7 +37,7 @@ footer {
   display: flex;
   justify-content:center;
   align-items: center;
-  background-image:url("../public/couple2.jpg"); 
+  background-image:url("../public/images/couple2.jpg"); 
  
 }
 

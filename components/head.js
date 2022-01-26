@@ -16,7 +16,7 @@ const nextHead= () =>  {
 
 
             <title>Cantin Photos</title>
-            <link rel="shortcut icon" type="image/x-icon" href='/favicon.png' />
+            <link rel="shortcut icon" type="image/x-icon" href='images/favicon.png' />
         </Head>
 
       </>

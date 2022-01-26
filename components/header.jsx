@@ -1,7 +1,7 @@
 
 import {useState, useEffect} from 'react'
 import Link from 'next/link';
-import logo from '../public/logo_cr.png';
+import logo from '../public/images/logo_cr.png';
 import Image from 'next/image'
 
 function Header({categories}) {
