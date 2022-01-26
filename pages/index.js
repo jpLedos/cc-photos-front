@@ -5,15 +5,25 @@ import Head from '../components/head'
 
 export default function Home( { categories } ) {
 
-console.log(process.env.STRAPI_API_URL);
+// console.log(process.env.STRAPI_API_URL);
+
+// picture accueil with centered text
+const accueil =  {
+    minHeight: '500px',
+    display: 'flex',
+    justifyContent: 'center' ,
+    alignItems: 'center' ,
+    backgroundImage : `url("./images/couple2.jpg")`,
+  }
+
 
   return (
     <>
         <Head />
         <Header categories ={ categories.data }/>
         <main>
-        <div  id='accueil'>
-          <h1>Charles Cantin Photographe</h1>
+        <div  style = {accueil}>
+          <h1 id="accueil">Charles Cantin Photographe</h1>
         </div>   
         
         </main>

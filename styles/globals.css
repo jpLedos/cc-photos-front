@@ -31,15 +31,7 @@ footer {
   text-align: center;
 }
 
-/* picture accueil with centered text*/
-#accueil {
-  min-height: 500px;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  background-image:url("../public/images/couple2.jpg"); 
- 
-}
+
 
 h1, h2 {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -56,7 +48,7 @@ h2 {
     letter-spacing:4px;
 }
 
-#accueil h1 {
+#accueil {
   background: #2a4050be;
   padding: 25px;
   border-radius: 5px;;
