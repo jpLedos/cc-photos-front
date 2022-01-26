@@ -16,7 +16,6 @@ export default function Galerie({ categories, galleries }) {
       filteredCategories = galleries.data.filter(c => c.attributes.category.data.attributes.title === query.category)
     }
 
-
 return (
 
     <>
@@ -29,13 +28,15 @@ return (
             filteredCategories.map((gallery) => {
                 return(
                 <>
-                    <div className={`image-container ${gallery.attributes.category.data.attributes.title}`} key={gallery.id} >
+              
+                    <div className={`image-container ${gallery.attributes.category.data.attributes.title}`} 
+                    key={gallery.id} >
                         <Image
                             loader = {myLoader}
-                            src={gallery.attributes.picture.data.attributes.formats.small.url}
+                            src= {gallery.attributes.picture.data.attributes.url}                           
                             alt={gallery.attributes.title}
-                            width={Math.floor(gallery.attributes.picture.data.attributes.formats.small.width  /1.3)}
-                            height={Math.floor(gallery.attributes.picture.data.attributes.formats.small.height /1.3)}
+                            width={Math.floor(gallery.attributes.picture.data.attributes.width  / 3)}
+                            height={Math.floor(gallery.attributes.picture.data.attributes.height / 3)}
                         
                         />
                     </div>
@@ -56,8 +57,8 @@ export const getStaticProps = async () => {
   const url = `${process.env.STRAPI_API_URL}/api/categories`;
   const response = await fetch(url);
   const categories = await response.json();  
+  
   const url2 = `${process.env.STRAPI_API_URL}/api/galleries?populate=*`;
-
   const response2 = await fetch(url2);
   const galleries = await response2.json();  
 

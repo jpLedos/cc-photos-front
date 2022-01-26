@@ -176,8 +176,9 @@ footer {
 }
 
 .image-container {
-    margin: 15px;
+    margin: 12px;
     min-width: 250px;
+    max-width: 380px;
 }
 
 /* page prices & prestations*/
