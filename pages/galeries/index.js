@@ -35,8 +35,8 @@ return (
                             loader = {myLoader}
                             src= {gallery.attributes.picture.data.attributes.url}                           
                             alt={gallery.attributes.title}
-                            width={Math.floor(gallery.attributes.picture.data.attributes.width  / 3)}
-                            height={Math.floor(gallery.attributes.picture.data.attributes.height / 3)}
+                            width={Math.floor(gallery.attributes.picture.data.attributes.width  )}
+                            height={Math.floor(gallery.attributes.picture.data.attributes.height )}
                         
                         />
                     </div>
