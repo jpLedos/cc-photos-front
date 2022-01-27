@@ -33,8 +33,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-Les API doivent etre deployées avant
-Modifier le next.config.js pour un fonctionnement API en local ou deployée:
+## local or deployed configuration next.config.js
+
+# first 
+install locally or deployed configuration API strapi
+ (https://github.com/jpLedos/cc-photos-back)
+
+Modify next.config.js for local or distant access to back-end 
 
   env: {
     STRAPI_API_URL: 'http://localhost:1337' ,
