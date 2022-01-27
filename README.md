@@ -40,11 +40,12 @@ install locally or deployed configuration API strapi
  (https://github.com/jpLedos/cc-photos-back)
 
 Modify next.config.js for local or distant access to back-end 
-
+```
   env: {
     STRAPI_API_URL: 'http://localhost:1337' ,
     // STRAPI_API_URL: 'https://cc-photos-back.herokuapp.com' 
   },
   
+  ```
 
 
