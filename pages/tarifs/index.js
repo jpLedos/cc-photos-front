@@ -67,5 +67,6 @@ export const getStaticProps = async () => {
         categories,
         prices,
       },
+      revalidate: 600, // In seconds =)> 10 minutes
   }
 }

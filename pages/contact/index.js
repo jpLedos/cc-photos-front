@@ -161,5 +161,6 @@ export const getStaticProps = async () => {
       props : {
         categories,
       },
+      revalidate: 600, // In seconds =)> 10 minutes
   }
 }
