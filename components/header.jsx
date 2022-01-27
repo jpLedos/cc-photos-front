@@ -1,4 +1,3 @@
-
 import {useState, useEffect} from 'react'
 import Link from 'next/link';
 import logo from '../public/images/logo_cr.png';
@@ -31,9 +30,6 @@ function Header({categories}) {
         }
     
       }, [])
-
-
-
 
 
     return (

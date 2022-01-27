@@ -5,8 +5,8 @@ import Head from '../components/head'
 
 export default function Home( { categories } ) {
 
-// console.log(process.env.STRAPI_API_URL);
-
+ //console.log(process.env.STRAPI_API_URL);
+console.log(categories);
 // picture accueil with centered text
 const accueil =  {
     minHeight: '500px',

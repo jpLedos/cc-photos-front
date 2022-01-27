@@ -33,10 +33,10 @@ return (
                     key={gallery.id} >
                         <Image
                             loader = {myLoader}
-                            src= {gallery.attributes.picture.data.attributes.url}                           
+                            src= {gallery.attributes.picture.data.attributes.formats.small.url}                           
                             alt={gallery.attributes.title}
-                            width={Math.floor(gallery.attributes.picture.data.attributes.width  )}
-                            height={Math.floor(gallery.attributes.picture.data.attributes.height )}
+                            width={Math.floor(gallery.attributes.picture.data.attributes.formats.small.width  )}
+                            height={Math.floor(gallery.attributes.picture.data.attributes.formats.small.height )}
                         
                         />
                     </div>

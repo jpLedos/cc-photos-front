@@ -73,24 +73,26 @@ export default function Galerie({ categories }) {
             //console.log({data : payload});
          
             const url =`${process.env.STRAPI_API_URL}/api/emails`;
-            //console.log("post : " + url);
-            fetch("url",{
+            console.log("post : " + url);
+            console.log(JSON.stringify({data : payload}));
+            fetch(url,{
                 method : "POST" ,
                 headers : {
                     "content-type" : "application/json",
                 },
                 body : JSON.stringify({data : payload}),
-            }).then(response => {
+            })
+            .then(response => {
                 console.log(response);
-            if(response.statusText === 'OK'){
-                    document.forms['contact'].reset();
-                    apiSuccess.innerHTML="Merci pour votre message qui a bien été envoyé !"
-                    apiError.innerHTML=""
+                if(response.statusText === 'OK'){
+                        document.forms['contact'].reset();
+                        apiSuccess.innerHTML="Merci pour votre message qui a bien été envoyé !"
+                        apiError.innerHTML=""
 
-            } else {
-                apiSuccess.innerHTML=""
-                apiError.innerHTML="Une erreur est survenue lors de l envoi du message !"
-            };
+                } else {
+                    apiSuccess.innerHTML=""
+                    apiError.innerHTML="Une erreur est survenue lors de l envoi du message !"
+                };
             })
         }
 
