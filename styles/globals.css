@@ -49,9 +49,18 @@ h2 {
 }
 
 #accueil {
-  background: #2a4050be;
-  padding: 25px;
-  border-radius: 5px;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+
+.accueil-title {
+    background: #2a4050be;
+    padding: 25px;
+    border-radius: 5px;
 }
 
 nav{ 
@@ -282,63 +291,68 @@ input, select, textarea {
 /*  for mobile */
 @media screen and (max-width: 768px) {
 
-  #accueil h1 {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size:2rem;
-    letter-spacing:4px;
-    padding: 15px;
-  }
+    #accueil {
+        padding: 15px;
+        border-radius: 5px;
+        min-height: 400px;
+        }
 
-  #btn-toogle-menu{
-    display :block;
-  }
+    .accueil-title {
+        font-size:2.5rem;
+        letter-spacing:3px;
+        padding: 15px;
+    }
 
-  #menu  {
-    position: absolute;
-    flex-direction: column;
-    width: 100%;
-    background: #2A4050;
-  }
+    #btn-toogle-menu{
+        display :block;
+    }
 
-  .nav-item {
-    width : 100%;
-    height: 50px;
-    border-bottom: 2px solid ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    #menu  {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        background: #2A4050;
+    }
 
-  .nav-item:nth-child(1) {
-    border-top: 3px solid ;
-  }
+    .nav-item {
+        width : 100%;
+        height: 50px;
+        border-bottom: 2px solid ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-  .nav-item:hover {
-    font-size:1.2em;
-  }
-  
-  .dropdown-menu{
-    position: absolute;
-    top :50px;
-    right : 0px;
-    background-color: #2A4050;
-  }
+    .nav-item:nth-child(1) {
+        border-top: 3px solid ;
+    }
+
+    .nav-item:hover {
+        font-size:1.2em;
+    }
+    
+    .dropdown-menu{
+        position: absolute;
+        top :50px;
+        right : 0px;
+        background-color: #2A4050;
+    }
 
 
-  .gallery {
-    display: flex;
-    padding: 5px;
-    margin: 10px 5px;
-}
+    .gallery {
+        display: flex;
+        padding: 5px;
+        margin: 10px 5px;
+    }
 
 
     .card-container {
-      
+    
         margin: 0px 0px;
 }
 
     .card {
-      
+    
         width: 90%;
     
     }

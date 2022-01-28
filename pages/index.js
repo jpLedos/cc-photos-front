@@ -9,11 +9,7 @@ export default function Home( { categories } ) {
 console.log(categories);
 // picture accueil with centered text
 const accueil =  {
-    minHeight: '500px',
-    display: 'flex',
-    justifyContent: 'center' ,
-    alignItems: 'center' ,
-    backgroundImage : `url("./images/couple2.jpg")`,
+    backgroundImage: 'url("./images/couple2.jpg")'
   }
 
 
@@ -21,9 +17,9 @@ const accueil =  {
     <>
         <Head />
         <Header categories ={ categories.data }/>
-        <main>
-        <div  style = {accueil}>
-          <h1 id="accueil">Charles Cantin Photographe</h1>
+        <main >
+        <div id="accueil" style={accueil} >
+          <h1 className="accueil-title">Charles Cantin Photographe</h1>
         </div>   
         
         </main>
