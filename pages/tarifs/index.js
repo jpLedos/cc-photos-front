@@ -6,7 +6,7 @@ import Footer from '../../components/footer'
 export default function Galerie({ categories, prices }) {
 
   const myLoader = ({ src, width, quality }) => {
-    return `${process.env.STRAPI_API_URL}${src}?w=${width}&q=${quality || 75}`
+    return `${src}?w=${width}&q=${quality || 75}`
   }
 
 
