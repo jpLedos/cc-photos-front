@@ -12,22 +12,22 @@ export default function Home( { categories, home } ) {
         return `${src}?w=${width}&q=${quality || 75}`
     }
 
-    const bgUrl = home.data.attributes.image.data[0].attributes.formats.large.url
+    const bgUrl = home.data.attributes.image.data.attributes.formats.large.url
     console.log(bgUrl);
 
     // picture accueil with centered text
     const accueil =  {
-        backgroundImage: `url(${bgUrl})`
+        backgroundImage: `url(${bgUrl})`,
     }
     
-
+   
   return (
     <>
         <Head />
         <Header categories ={ categories.data }/>
         <main >
         <div id="accueil" style={accueil} >
-          <h1 className="accueil-title">{home.data.attributes.titletext}</h1>
+          <h1 className="accueil-title">{home.data.attributes.homeTitle}</h1>
         </div>   
         
         </main>
@@ -42,7 +42,7 @@ export const getStaticProps = async () => {
   const response = await fetch(url);
   const categories = await response.json();  
 
-  const url2 = `${process.env.STRAPI_API_URL}/api/home-background?populate=*`;
+  const url2 = `${process.env.STRAPI_API_URL}/api/home?populate=*`;
   const response2 = await fetch(url2);
   const home = await response2.json();  
 
