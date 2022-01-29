@@ -3,15 +3,23 @@ import Footer from '../components/footer'
 import Head from '../components/head'
 
 
-export default function Home( { categories } ) {
+export default function Home( { categories, home } ) {
 
- //console.log(process.env.STRAPI_API_URL);
-console.log(categories);
-// picture accueil with centered text
-const accueil =  {
-    backgroundImage: 'url("./images/couple2.jpg")'
-  }
+    //console.log(process.env.STRAPI_API_URL);
+    console.log(home);
 
+    const myLoader = ({ src, width, quality }) => {
+        return `${src}?w=${width}&q=${quality || 75}`
+    }
+
+    const bgUrl = home.data.attributes.image.data[0].attributes.formats.large.url
+    console.log(bgUrl);
+
+    // picture accueil with centered text
+    const accueil =  {
+        backgroundImage: `url(${bgUrl})`
+    }
+    
 
   return (
     <>
@@ -19,7 +27,7 @@ const accueil =  {
         <Header categories ={ categories.data }/>
         <main >
         <div id="accueil" style={accueil} >
-          <h1 className="accueil-title">Charles Cantin Photographe</h1>
+          <h1 className="accueil-title">{home.data.attributes.titletext}</h1>
         </div>   
         
         </main>
@@ -34,10 +42,18 @@ export const getStaticProps = async () => {
   const response = await fetch(url);
   const categories = await response.json();  
 
+  const url2 = `${process.env.STRAPI_API_URL}/api/home-background?populate=*`;
+  const response2 = await fetch(url2);
+  const home = await response2.json();  
+
   return {
       props : {
         categories,
+        home
       },
       revalidate: 600, // In seconds =)> 10 minutes
   }
 }
+
+
+
